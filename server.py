@@ -20,7 +20,7 @@ def get_weather():
     weather_data = get_current_weather(city)
 
     #city not found
-    if not weather_data['code'] == 200:
+    if not weather_data['cod'] == 200:
         return render_template("city-not-found.html")
 
     return render_template(
@@ -33,5 +33,3 @@ def get_weather():
 
 
 
-if __name__ == "__main__":
-    serve(app, host="0.0.0.0", port=8000)
